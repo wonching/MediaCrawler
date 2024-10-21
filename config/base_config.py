@@ -11,9 +11,9 @@
 
 # 基础配置
 PLATFORM = "xhs"
-KEYWORDS = "编程副业,编程兼职" # 关键词搜索配置，以英文逗号分隔
+KEYWORDS = "泰服" # 关键词搜索配置，以英文逗号分隔
 LOGIN_TYPE = "qrcode"  # qrcode or phone or cookie
-COOKIES = ""
+COOKIES = "abRequestId=c3562d35-c89b-5db6-901f-7b8b6eca1dd2; a1=18d81cfd216zj753iatpwazu70e0qyt33mhkesfnm50000322596; webId=eb12f5218359ec52100708ecbe4f4ee3; gid=yYfYySiidqqSyYfYySifJ6MiyKuVW2q309UExI60u7W8dT288Av9qd888qJJ2jK8qJ2dd2K0; web_session=0400698cbafe605660ed28c221354b77b76f5e; xsecappid=xhs-pc-web; acw_tc=32070bc112edfc071b28229f64e60201e8c5471923e9aa9c7e9d282954f91d03; webBuild=4.39.0; websectiga=7750c37de43b7be9de8ed9ff8ea0e576519e8cd2157322eb972ecb429a7735d4; sec_poison_id=aa23e9ad-8d9f-45ad-be8e-5c6064028790; unread={%22ub%22:%2266f147d6000000001a02174b%22%2C%22ue%22:%22670e13b60000000026037ff3%22%2C%22uc%22:30}"
 # 具体值参见media_platform.xxx.field下的枚举值，暂时只支持小红书
 SORT_TYPE = "popularity_descending"
 # 具体值参见media_platform.xxx.field下的枚举值，暂时只支持抖音
@@ -39,16 +39,16 @@ HEADLESS = False
 SAVE_LOGIN_STATE = True
 
 # 数据保存类型选项配置,支持三种类型：csv、db、json, 最好保存到DB，有排重的功能。
-SAVE_DATA_OPTION = "json"  # csv or db or json
+SAVE_DATA_OPTION = "db"  # csv or db or json
 
 # 用户浏览器缓存的浏览器文件配置
 USER_DATA_DIR = "%s_user_data_dir"  # %s will be replaced by platform name
 
 # 爬取开始页数 默认从第一页开始
-START_PAGE = 1
+START_PAGE = 8
 
 # 爬取视频/帖子的数量控制
-CRAWLER_MAX_NOTES_COUNT = 200
+CRAWLER_MAX_NOTES_COUNT = 40
 
 # 并发爬虫数量控制
 MAX_CONCURRENCY_NUM = 1
