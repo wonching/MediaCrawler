@@ -190,6 +190,7 @@ class XiaoHongShuClient(AbstractApiClient):
 
     async def get_note_by_keyword(
             self, keyword: str,
+            search_id: str = get_search_id(),
             page: int = 1, page_size: int = 20,
             sort: SearchSortType = SearchSortType.GENERAL,
             note_type: SearchNoteType = SearchNoteType.ALL
@@ -211,7 +212,7 @@ class XiaoHongShuClient(AbstractApiClient):
             "keyword": keyword,
             "page": page,
             "page_size": page_size,
-            "search_id": get_search_id(),
+            "search_id": search_id,
             "sort": sort.value,
             "note_type": note_type.value
         }
@@ -288,21 +289,22 @@ class XiaoHongShuClient(AbstractApiClient):
         return await self.get(uri, params)
 
     async def get_note_all_comments(self, note_id: str, crawl_interval: float = 1.0,
-                                    callback: Optional[Callable] = None) -> List[Dict]:
+                                    callback: Optional[Callable] = None,
+                                    max_count: int = 10) -> List[Dict]:
         """
         获取指定笔记下的所有一级评论，该方法会一直查找一个帖子下的所有评论信息
         Args:
             note_id: 笔记ID
             crawl_interval: 爬取一次笔记的延迟单位（秒）
             callback: 一次笔记爬取结束后
-
+            max_count: 一次笔记爬取的最大评论数量
         Returns:
 
         """
         result = []
         comments_has_more = True
         comments_cursor = ""
-        while comments_has_more:
+        while comments_has_more and len(result) < max_count:
             comments_res = await self.get_note_comments(note_id, comments_cursor)
             comments_has_more = comments_res.get("has_more", False)
             comments_cursor = comments_res.get("cursor", "")
@@ -311,6 +313,8 @@ class XiaoHongShuClient(AbstractApiClient):
                     f"[XiaoHongShuClient.get_note_all_comments] No 'comments' key found in response: {comments_res}")
                 break
             comments = comments_res["comments"]
+            if len(result) + len(comments) > max_count:
+                comments = comments[:max_count - len(result)]
             if callback:
                 await callback(note_id, comments)
             await asyncio.sleep(crawl_interval)

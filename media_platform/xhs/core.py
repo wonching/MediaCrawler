@@ -21,6 +21,7 @@ from tenacity import RetryError
 
 import config
 from base.base_crawler import AbstractCrawler
+from config import CRAWLER_MAX_COMMENTS_COUNT_SINGLENOTES
 from model.m_xiaohongshu import NoteUrlInfo
 from proxy.proxy_ip_pool import IpInfoModel, create_ip_pool
 from store import xhs as xhs_store
@@ -30,7 +31,7 @@ from var import crawler_type_var, source_keyword_var
 from .client import XiaoHongShuClient
 from .exception import DataFetchError
 from .field import SearchSortType
-from .help import parse_note_info_from_note_url
+from .help import parse_note_info_from_note_url, get_search_id
 from .login import XiaoHongShuLogin
 
 
@@ -111,6 +112,7 @@ class XiaoHongShuCrawler(AbstractCrawler):
             source_keyword_var.set(keyword)
             utils.logger.info(f"[XiaoHongShuCrawler.search] Current search keyword: {keyword}")
             page = 1
+            search_id = get_search_id()
             while (page - start_page + 1) * xhs_limit_count <= config.CRAWLER_MAX_NOTES_COUNT:
                 if page < start_page:
                     utils.logger.info(f"[XiaoHongShuCrawler.search] Skip page {page}")
@@ -122,6 +124,7 @@ class XiaoHongShuCrawler(AbstractCrawler):
                     note_id_list: List[str] = []
                     notes_res = await self.xhs_client.get_note_by_keyword(
                         keyword=keyword,
+                        search_id=search_id,
                         page=page,
                         sort=SearchSortType(config.SORT_TYPE) if config.SORT_TYPE != '' else SearchSortType.GENERAL,
                     )
@@ -263,7 +266,8 @@ class XiaoHongShuCrawler(AbstractCrawler):
             await self.xhs_client.get_note_all_comments(
                 note_id=note_id,
                 crawl_interval=random.random(),
-                callback=xhs_store.batch_update_xhs_note_comments
+                callback=xhs_store.batch_update_xhs_note_comments,
+                max_count=CRAWLER_MAX_COMMENTS_COUNT_SINGLENOTES
             )
 
     @staticmethod
