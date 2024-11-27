@@ -1,3 +1,12 @@
+# 🔥 自媒体平台爬虫🕷️MediaCrawler🔥 
+<a href="https://trendshift.io/repositories/8291" target="_blank"><img src="https://trendshift.io/api/badge/repositories/8291" alt="NanmiCoder%2FMediaCrawler | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+
+[![GitHub Stars](https://img.shields.io/github/stars/NanmiCoder/MediaCrawler?style=social)](https://github.com/NanmiCoder/MediaCrawler/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/NanmiCoder/MediaCrawler?style=social)](https://github.com/NanmiCoder/MediaCrawler/network/members)
+[![GitHub Issues](https://img.shields.io/github/issues/NanmiCoder/MediaCrawler)](https://github.com/NanmiCoder/MediaCrawler/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/NanmiCoder/MediaCrawler)](https://github.com/NanmiCoder/MediaCrawler/pulls)
+[![License](https://img.shields.io/github/license/NanmiCoder/MediaCrawler)](https://github.com/NanmiCoder/MediaCrawler/blob/main/LICENSE)
+
 > **免责声明：**
 > 
 > 大家请以学习为目的使用本仓库⚠️⚠️⚠️⚠️，[爬虫违法违规的案件](https://github.com/HiddenStrawberry/Crawler_Illegal_Cases_In_China)  <br>
@@ -14,22 +23,18 @@
 原理：利用[playwright](https://playwright.dev/)搭桥，保留登录成功后的上下文浏览器环境，通过执行JS表达式获取一些加密参数
 通过使用此方式，免去了复现核心加密JS代码，逆向难度大大降低
 
-MediaCrawler仓库白金赞助商:
-<a href="https://dashboard.ipcola.com/register?referral_code=atxtupzfjhpbdbl">⚡️【IPCola全球独家海外IP代理】⚡️新鲜的原生住宅代理，超高性价比，超多稀缺国家</a>
-
 # 功能列表
-| 平台  | 关键词搜索 | 指定帖子ID爬取 | 二级评论 | 指定创作者主页 | 登录态缓存 | IP代理池 | 生成评论词云图 |
-|-----|-------|---------|-----|--------|-------|-------|-------|
-| 小红书 | ✅     | ✅       | ✅   | ✅      | ✅     | ✅     | ✅    |
-| 抖音  | ✅     | ✅       | ✅    | ✅       | ✅     | ✅     | ✅    |
-| 快手  | ✅     | ✅       | ✅   | ✅      | ✅     | ✅     | ✅    |
-| B 站 | ✅     | ✅       | ✅   | ✅      | ✅     | ✅     | ✅    |
-| 微博  | ✅     | ✅       | ✅   | ✅      | ✅     | ✅     | ✅    |
-| 贴吧  | ✅     | ✅       | ✅   | ✅      | ✅     | ✅     | ✅    |
-| 知乎  | ✅     |   ❌      | ✅   | ✅      | ✅     | ✅     | ✅    |
+| 平台   | 关键词搜索 | 指定帖子ID爬取 | 二级评论 | 指定创作者主页 | 登录态缓存 | IP代理池 | 生成评论词云图 |
+| ------ | ---------- | -------------- | -------- | -------------- | ---------- | -------- | -------------- |
+| 小红书 | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+| 抖音   | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+| 快手   | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+| B 站   | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+| 微博   | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+| 贴吧   | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+| 知乎   | ✅          | ❌              | ✅        | ✅              | ✅          | ✅        | ✅              |
 
-
-# 插播一下：MediaCrawlerPro重磅发布啦！！！
+### MediaCrawlerPro重磅发布啦！！！
 > 主打学习成熟项目的架构设计，不仅仅是爬虫，Pro中的其他代码设计思路也是值得学习，欢迎大家关注！！！
 
 [MediaCrawlerPro](https://github.com/MediaCrawlerPro) 版本已经重构出来了，相较于开源版本的优势：
@@ -39,6 +44,7 @@ MediaCrawler仓库白金赞助商:
 - 代码重构优化，更加易读易维护（解耦JS签名逻辑）
 - 代码质量更高，对于构建更大型的爬虫项目更加友好
 - 完美的架构设计，更加易扩展，源码学习的价值更大
+
 
 # 安装部署方法
 > 开源不易，希望大家可以Star一下MediaCrawler仓库！！！！十分感谢！！！ <br>
@@ -135,13 +141,22 @@ MediaCrawler仓库白金赞助商:
   - [错误使用 Python 可变类型带来的隐藏 Bug](https://articles.zsxq.com/id_f7vn89l1d303.html)
 
 
-# 感谢下列Sponsors对本仓库赞助
-> 【IPCola全球独家海外IP代理】使用此处阿江专属推荐码注册：atxtupzfjhpbdbl ，获得10%金额补贴。
-- <a href="https://dashboard.ipcola.com/register?referral_code=atxtupzfjhpbdbl">⚡️【IPCola全球独家海外IP代理】⚡️新鲜的原生住宅代理，超高性价比，超多稀缺国家</a>
+  
+# 感谢下列Sponsors对本仓库赞助支持
 - <a href="https://sider.ai/ad-land-redirect?source=github&p1=mi&p2=kk">【Sider】全网最火的ChatGPT插件，我也免费薅羊毛用了快一年了，体验拉满。</a>
-
 成为赞助者，可以将您产品展示在这里，每天获得大量曝光，联系作者微信：yzglan 或 email：relakkes@gmail.com
 
+### 给好朋友新书站台推荐
+
+好朋友 [自动化测试框架设计 - Python](ttps://item.jd.com/10124939676219.html) 的新书📚出版啦，强力推荐！！！[京东购书5折链接](https://item.jd.com/10124939676219.html)
+<p>
+  <a href="https://item.jd.com/10124939676219.html"><img alt="打赏-微信" src="docs/static/images/auto_test.png" style="width: 200px;margin-right: 140px;" /></a>
+</p>
+
+
+框架的设计，http接口封装、数据库操作设计、UI自动化（selenium、playwright、appium）这些跟爬虫其实也大差不差，值得学习
+
+关于[虫师](https://github.com/defnngj) ：Github千星开源仓库seldom作者、博客园知名大V，已出版的多类书籍
 
 # MediaCrawler项目微信交流群
 
